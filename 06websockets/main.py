@@ -18,7 +18,7 @@ html = """
         <ul id='messages'>
         </ul>
         <script>
-            var ws = new WebSocket("ws://localhost:8000/ws");
+            var ws = new WebSocket("ws://127.0.0.1:8000/foo");
             ws.onmessage = function(event) {
                 var messages = document.getElementById('messages')
                 var message = document.createElement('li')
@@ -43,7 +43,7 @@ async def get():
     return HTMLResponse(html)
 
 
-@app.websocket("/ws")
+@app.websocket("/foo")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     while True:
