@@ -13,6 +13,8 @@ Some good examples of using the [Flask framework](https://flask.palletsprojects.
     // in the first time
     pip install fastapi
     pip install uvicorn
+    pip install pytest
+    pip install httpx
 
     // run
     uvicorn main:app --reload
