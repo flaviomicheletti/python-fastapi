@@ -28,6 +28,13 @@ Some good examples of using the [Flask framework](https://flask.palletsprojects.
 + http://127.0.0.1:8000/items/5?q=somequery
 
 
-## awesome
+## Tests
+
+See the example [extende_test/](04extented_test/).
+
+![image](https://user-images.githubusercontent.com/1257048/206860950-4cac2e58-a5c9-41b9-add2-06c83bddf7c0.png)
+
+
+## Awesome
 
 - https://github.com/mjhea0/awesome-fastapi
