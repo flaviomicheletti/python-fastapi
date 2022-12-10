@@ -11,3 +11,7 @@ If you see the following error:
 Solve this by installing the dependency below:
 
     pip install uvicorn[standard]
+
+## See also
+
+https://fastapi.tiangolo.com/advanced/testing-websockets/
