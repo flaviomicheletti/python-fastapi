@@ -12,4 +12,7 @@ def test_read_main():
 
 """
 https://fastapi.tiangolo.com/tutorial/testing/#separating-tests
+
+pytest
+uvicorn main:app
 """
