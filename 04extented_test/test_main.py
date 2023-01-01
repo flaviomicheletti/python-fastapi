@@ -28,38 +28,50 @@ def test_read_inexistent_item():
 
 
 def test_create_item():
-    response = client.post(
-        "/items/",
-        headers={"X-Token": "coneofsilence"},
-        json={"id": "foobar", "title": "Foo Bar", "description": "The Foo Barters"},
-    )
-    assert response.status_code == 200
-    assert response.json() == {
+    input = {
+        "id": "foobar",
+        "title": "Foo Bar",
+        "description": "The Foo Barters",
+    } 
+    # is the same!
+    output = {
         "id": "foobar",
         "title": "Foo Bar",
         "description": "The Foo Barters",
     }
 
+    response = client.post("/items/", headers={"X-Token": "coneofsilence"}, json=input)
+    assert response.status_code == 200
+    assert response.json() == output
+
 
 def test_create_item_bad_token():
+    input = {"id": "bazz", "title": "Bazz", "description": "Drop the bazz"}
+    output = {"detail": "Invalid X-Token header"}
+
     response = client.post(
         "/items/",
         headers={"X-Token": "hailhydra"},
-        json={"id": "bazz", "title": "Bazz", "description": "Drop the bazz"},
+        json=input,
     )
+
     assert response.status_code == 400
-    assert response.json() == {"detail": "Invalid X-Token header"}
+    assert response.json() == output
 
 
 def test_create_existing_item():
+
+    input = {
+        "id": "foo",
+        "title": "The Foo ID Stealers",
+        "description": "There goes my stealer",
+    }
+    output = {"detail": "Item already exists"}
+
     response = client.post(
         "/items/",
         headers={"X-Token": "coneofsilence"},
-        json={
-            "id": "foo",
-            "title": "The Foo ID Stealers",
-            "description": "There goes my stealer",
-        },
+        json=input,
     )
     assert response.status_code == 400
-    assert response.json() == {"detail": "Item already exists"}
+    assert response.json() == output
