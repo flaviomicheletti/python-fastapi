@@ -1,7 +1,6 @@
 ![image](https://user-images.githubusercontent.com/1257048/204164980-6e893ff8-f25a-44b9-8baa-1dc6770a3b2d.png)
 
-
-Some good examples of using the [Flask framework](https://flask.palletsprojects.com/).
+Some good examples of using the [FASTAPI framework](https://fastapi.tiangolo.com/).
 
 
 ## Instalation
@@ -38,3 +37,7 @@ See the example [extende_test/](04extented_test/).
 ## Awesome
 
 - https://github.com/mjhea0/awesome-fastapi
+
+## Next
+
+- https://fastapi.tiangolo.com/external-links/
