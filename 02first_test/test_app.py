@@ -18,5 +18,11 @@ def test_read_main():
     assert response.json() == {"msg": "Hello World"}
 
 """
-pytest
+To run tests
+
+    pytest
+
+To run application
+
+    uvicorn test_app:app
 """
