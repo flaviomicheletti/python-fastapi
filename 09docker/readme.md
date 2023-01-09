@@ -11,3 +11,6 @@
 
     // Access
     http://localhost:8001/
+
+    // or
+    uvicorn app.main:app --reload
