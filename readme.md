@@ -6,8 +6,7 @@ Some good examples of using the [FASTAPI framework](https://fastapi.tiangolo.com
 ## Instalation
 
     // your env
-    python3 -m venv venv
-    . venv/bin/activate
+    python3 -m venv .venv &  . .venv/bin/activate
 
     // in the first time
     pip install fastapi
