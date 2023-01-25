@@ -1,0 +1,1 @@
+A step back, with the same structure as the previous example we take a step back and see the result as a simple script running in the terminal (without FASTAPI).
