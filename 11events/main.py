@@ -18,7 +18,7 @@ def shutdown_event():
 
 
 @app.get("/items/")
-async def read_items():
+async def read_all_items():
     return items
 
 
