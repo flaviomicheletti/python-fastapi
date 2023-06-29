@@ -56,9 +56,8 @@ files.
 possible to build real-time applications and bidirectional communication with 
 clients. 
 
-**CORS (Cross-Origin Resource Sharing): **FastAPI supports CORS 
-configuration, allowing you to define the origins and headers that can access 
-your API. 
+**CORS (Cross-Origin Resource Sharing):** FastAPI supports CORS configuration, 
+allowing you to define the origins and headers that can access your API. 
 
 **Testing:** FastAPI provides test client utilities that enable you to write 
 tests for your API endpoints and perform assertions on the responses. 

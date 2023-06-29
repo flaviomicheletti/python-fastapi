@@ -1,6 +1,8 @@
 fastapi
 uvicorn
 pytest
+pytest-cov
+pytest-mock
 httpx
 psycopg2-binary
 SQLAlchemy
