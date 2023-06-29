@@ -8,6 +8,7 @@ fake_db = {
     "bar": {"id": "bar", "title": "Bar", "description": "The bartenders"},
 }
 
+
 app = FastAPI()
 
 
@@ -32,5 +33,5 @@ async def create_item(item: Item, x_token: str = Header()):
         raise HTTPException(status_code=400, detail="Invalid X-Token header")
     if item.id in fake_db:
         raise HTTPException(status_code=400, detail="Item already exists")
-    fake_db[item.id] = item
+    fake_db[item.id] = dict(item)
     return item
