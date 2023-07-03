@@ -2,26 +2,11 @@
 https://fastapi.tiangolo.com/advanced/testing-dependencies/
 """
 
-from typing import Union
-
-from fastapi import Depends, FastAPI
 from fastapi.testclient import TestClient
 
 from main import app
 
 client = TestClient(app)
-
-#
-# pay attention
-#
-async def override_dependency(q: Union[str, None] = None):
-    return {"q": q, "skip": 5, "limit": 10}
-
-
-#
-# pay attention
-#
-app.dependency_overrides[app.common_parameters] = override_dependency
 
 
 def test_override_in_items():
@@ -29,7 +14,7 @@ def test_override_in_items():
     assert response.status_code == 200
     assert response.json() == {
         "message": "Hello Items!",
-        "params": {"q": None, "skip": 5, "limit": 10},
+        "params": {"q": None, "skip": 0, "limit": 100},
     }
 
 
@@ -38,7 +23,7 @@ def test_override_in_items_with_q():
     assert response.status_code == 200
     assert response.json() == {
         "message": "Hello Items!",
-        "params": {"q": "foo", "skip": 5, "limit": 10},
+        "params": {"q": "foo", "skip": 0, "limit": 100},
     }
 
 
@@ -47,5 +32,13 @@ def test_override_in_items_with_params():
     assert response.status_code == 200
     assert response.json() == {
         "message": "Hello Items!",
-        "params": {"q": "foo", "skip": 5, "limit": 10},
+        "params": {"q": "foo", "skip": 100, "limit": 200},
+    }
+
+def test_foo():
+    response = client.get("/users/")
+    assert response.status_code == 200
+    assert response.json() == {
+        "message": "Hello Users!",
+        "params": {"q": None, "skip": 0, "limit": 100},
     }

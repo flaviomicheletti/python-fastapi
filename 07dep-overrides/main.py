@@ -21,7 +21,4 @@ async def read_items(commons: dict = Depends(common_parameters)):
 async def read_users(commons: dict = Depends(common_parameters)):
     return {"message": "Hello Users!", "params": commons}
 
-#
-# pay attention
-#
-app.common_parameters = common_parameters
+
