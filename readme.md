@@ -31,6 +31,8 @@ Some good examples of using the [FASTAPI framework](https://fastapi.tiangolo.com
 
 ## Tests
 
+Run the tests on each folder separately!
+
     pytest
     pytest --cov . --cov-report html
 
