@@ -34,14 +34,17 @@ Some good examples of using the [FASTAPI framework](https://fastapi.tiangolo.com
 Run the tests on each folder separately!
 
     pytest
+    pytest -rP
+    python -m pytest test_main.py
     pytest --cov . --cov-report html
 
 
 ## Articles
 
+- https://www.linkedin.com/posts/jesumyip_custom-response-html-stream-file-others-activity-7083432591449604097-CSl1
 - https://github.com/mjhea0/awesome-fastapi
 - https://santoshk.dev/posts/2021/tdd-approach-to-create-an-authentication-system-with-fastapi-part-3/
-- [Title](https://github.com/mfreeborn/fastapi-sqlalchemy)
+- https://github.com/mfreeborn/fastapi-sqlalchemy
 
 ## Next
 
